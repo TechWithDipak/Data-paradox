@@ -42,6 +42,8 @@
 - **2026-11-13 08:04**: Removed all emojis and decorative icons across the entire application code, UI headers, sidebar filters, cards, badges, and documentation to give the dashboard a clean, authentic, human-designed enterprise appearance. Verified zero remaining emojis across all `.py` and `.toml` files via automated regex scan. Verified end-to-end with `AppTest` (0 exceptions).
 - **2026-11-13 08:09**: Initialized Git repository, staged all project files and memory logs, committed as `b981b7b`, and successfully force-pushed to remote GitHub repository `https://github.com/TechWithDipak/Data-paradox.git` replacing existing files per user request.
 - **2026-11-13 08:27**: Created comprehensive non-technical guide `PROJECT.md` in the project root covering project overview, end-to-end data pipeline, sheet descriptions, tour of all 6 tabs with exact numbers, explanations of all interactive features with mathematical walk-throughs, actual findings, 5-minute faculty presentation script, and 18 detailed viva Q&A for academic review.
+- **2026-11-13 15:05**: Resolved visual collision on the Quarterly Churn chart (`overview_tab.py`) where the inline plot title and the horizontal legend occupied the same horizontal row. Moved subtitle into a clean Streamlit caption above the chart, gave the horizontal legend full top-width breathing room (`y=1.02`), and cleaned up redundant titles across remaining tabs (`customer_tab.py`, `recommendation_tab.py`, `marketing_tab.py`, `mece_tab.py`). Committed (`2d84357`) and pushed to GitHub.
+
 
 
 
