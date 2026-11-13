@@ -95,6 +95,7 @@ def render_mece_tab():
 
     tree_df = pd.DataFrame(plot_records)
 
+    st.caption("Interactive ring map: click any ring segment to zoom in; click the center circle to zoom back out.")
     fig_tree = px.sunburst(
         tree_df,
         names="name",
@@ -106,11 +107,10 @@ def render_mece_tab():
             "Supported": "#10B981",
             "Partially Supported": "#F59E0B",
             "Not Testable": "#64748B"
-        },
-        title="<b>Interactive MECE Issue Tree Map (Click any ring segment to zoom in)</b>"
+        }
     )
     fig_tree.update_layout(
-        margin=dict(l=10, r=10, t=40, b=10),
+        margin=dict(l=10, r=10, t=10, b=10),
         height=480,
         plot_bgcolor="#FFFFFF",
         paper_bgcolor="#FFFFFF"

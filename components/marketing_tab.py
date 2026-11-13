@@ -121,6 +121,7 @@ def render_marketing_tab(df_campaigns: pd.DataFrame):
 
     # Campaign Scatter Plot (Spend vs ROI vs Conversion)
     st.markdown("#### Campaign Performance Bubble Chart (Spend vs ROI)")
+    st.caption("Bubble size represents conversion rate (%). Dotted line indicates break-even (ROI = 0.0).")
     fig_scatter = px.scatter(
         df_campaigns,
         x="Spend($)",
@@ -129,10 +130,9 @@ def render_marketing_tab(df_campaigns: pd.DataFrame):
         color="Channel",
         text="Campaign_ID",
         hover_data=["Segment_Targeted", "CTR(%)", "Conversion(%)"],
-        title="<b>Spend vs ROI (Bubble Size = Conversion %) — Distinct Channel Color Coding</b>",
         color_discrete_map=CHANNEL_COLORS
     )
-    fig_scatter.add_hline(y=0.0, line_dash="dash", line_color="#EF4444", annotation_text="Break-even Line (ROI = 0.0)")
+    fig_scatter.add_hline(y=0.0, line_dash="dash", line_color="#EF4444", annotation_text="Break-even (ROI = 0.0)")
     fig_scatter.update_traces(
         textposition="top center",
         marker=dict(line=dict(color="#1E293B", width=1))
@@ -141,7 +141,7 @@ def render_marketing_tab(df_campaigns: pd.DataFrame):
         plot_bgcolor="#FFFFFF",
         paper_bgcolor="#FFFFFF",
         height=420,
-        margin=dict(l=40, r=40, t=50, b=40)
+        margin=dict(l=40, r=40, t=30, b=40)
     )
     st.plotly_chart(fig_scatter, use_container_width=True)
 

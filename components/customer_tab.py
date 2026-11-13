@@ -209,8 +209,7 @@ def render_customer_tab(df_customers: pd.DataFrame):
             text_auto=True,
             aspect="auto",
             color_continuous_scale=custom_diverging_scale,
-            labels=dict(x="Loyalty Tier", y="City Location", color="Churn %"),
-            title="<b>Intersection Matrix: Churn Risk by City and Loyalty Tier</b>"
+            labels=dict(x="Loyalty Tier", y="City Location", color="Churn %")
         )
         fig_heat.update_traces(
             texttemplate="<b>%{z:.1f}%</b>",
@@ -220,7 +219,7 @@ def render_customer_tab(df_customers: pd.DataFrame):
             plot_bgcolor="#FFFFFF",
             paper_bgcolor="#FFFFFF",
             height=360,
-            margin=dict(l=40, r=40, t=50, b=30)
+            margin=dict(l=40, r=40, t=20, b=30)
         )
         st.plotly_chart(fig_heat, use_container_width=True)
 

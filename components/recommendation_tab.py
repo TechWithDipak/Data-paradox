@@ -209,12 +209,11 @@ def render_recommendation_tab(df_recommendations: pd.DataFrame, df_customers: pd
         )
     )
     fig_cat_vol.update_layout(
-        title="<b>Recommendation Volume by Category (Distinct Product Palette)</b>",
         xaxis=dict(title="Product Category"),
         yaxis=dict(title="Total Recommendations Delivered"),
         plot_bgcolor="#FFFFFF",
         paper_bgcolor="#FFFFFF",
-        margin=dict(l=20, r=20, t=40, b=20),
+        margin=dict(l=20, r=20, t=20, b=20),
         height=320
     )
     st.plotly_chart(fig_cat_vol, use_container_width=True)

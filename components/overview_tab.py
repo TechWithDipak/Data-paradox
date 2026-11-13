@@ -91,6 +91,7 @@ def render_overview_tab(df_customers: pd.DataFrame, df_churn_trend: pd.DataFrame
 
     # Macro Churn Trend Chart with Distinct Harmonious Colors
     st.markdown("#### Quarterly Churn & Customer Base Dynamics")
+    st.caption("Quarterly Trajectory: Customer Churn Surge vs Net Acquisition Deficit")
     fig = go.Figure()
 
     # Active Customers Bar (Slate Indigo with gentle transparency)
@@ -152,7 +153,6 @@ def render_overview_tab(df_customers: pd.DataFrame, df_churn_trend: pd.DataFrame
     )
 
     fig.update_layout(
-        title="<b>Quarterly Trajectory: Customer Churn Surge vs Net Acquisition Deficit</b>",
         barmode="group",
         xaxis=dict(title="Quarter", tickfont=dict(size=12, family="sans-serif")),
         yaxis=dict(
@@ -171,11 +171,12 @@ def render_overview_tab(df_customers: pd.DataFrame, df_churn_trend: pd.DataFrame
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=1.05,
+            y=1.02,
             xanchor="center",
-            x=0.5
+            x=0.5,
+            font=dict(size=12)
         ),
-        margin=dict(l=40, r=40, t=60, b=40),
+        margin=dict(l=40, r=40, t=30, b=40),
         plot_bgcolor="#FFFFFF",
         paper_bgcolor="#FFFFFF",
         height=450
